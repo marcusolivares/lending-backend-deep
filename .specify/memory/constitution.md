@@ -1,10 +1,9 @@
 <!--
 Sync Impact Report
-- Version change: 0.0.0 -> 1.0.0
-- Modified principles: Initial constitution framework -> Partner-First Delivery,
-  Async Submission & Resilience, Secure Partner Access, Performance & Scale,
-  Quality & Governance
-- Added sections: Partner & Platform Boundaries; Delivery & Quality Standards
+- Version change: 1.2.0 -> 1.3.0
+- Modified principles: Development Workflow guidance expanded to require the REST API
+  technical template as an implementation reference
+- Added sections: none
 - Removed sections: none
 - Deferred items: TODO(RATIFICATION_DATE): original adoption date not yet recorded
 -->
@@ -75,6 +74,34 @@ The platform must meet the following operating standards:
 - Valid enumerations and canonical partner data must be exposed via master data
   endpoints to reduce bad submissions and integration failures.
 
+## Development Workflow
+
+All technical work must begin from the authoritative source of truth for the framework,
+service, or API in use. When a feature, contract, or integration depends on a library,
+platform capability, or external service, the team must consult the current official
+documentation before implementation and must rely on the latest supported guidance for
+that version.
+
+During the Spec-Kit implementation step, Context7 MCP must be used to fetch the latest
+documentation relevant to the frameworks, libraries, and APIs involved. That
+documentation is the technical knowledge base for implementation decisions; code must
+not be based on stale assumptions when current documentation is available. If no
+relevant Context7 documentation is available, use the current official documentation
+and record that limitation.
+
+For implementation steps, the team must use GitHub MCP to inspect the current source
+of the technical template at
+https://github.com/marcusolivares/rest-api-template. Its code structure, conventions,
+and relevant technical patterns are the baseline for implementation and must be followed
+unless a deviation is required by this constitution or the lending domain. Document and
+justify deviations; adapt template examples to the lending domain rather than carrying
+over unrelated sample behavior.
+
+Implementation decisions that conflict with current official guidance must be documented,
+reviewed, and approved before merge. No deployment, integration, or API contract may be
+implemented on undocumented assumptions. The team must record the source of truth used
+for the decision so future changes can be validated against the same standard.
+
 ## Governance
 
 This constitution supersedes informal practice for platform decisions related to partner
@@ -96,4 +123,4 @@ secure API key access, asynchronous processing, and the stated performance and s
 goals. Reviews must confirm that any new feature, release, or integration plan remains
 consistent with this constitution before it is considered ready for production.
 
-**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE): original adoption date not yet recorded | **Last Amended**: 2026-10-13
+**Version**: 1.3.0 | **Ratified**: TODO(RATIFICATION_DATE): original adoption date not yet recorded | **Last Amended**: 2026-10-14
